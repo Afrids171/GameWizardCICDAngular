@@ -36,7 +36,8 @@
 <div class="maindiv">
 
     <div>
-        <h1 style="text-align: center; color: blue;">Choose Your Pre-Owned Gaming Console from here &#128521;&#128521;</h1>
+        <h1 style="text-align: center; color: blue;">Choose Your Pre-Owned Gaming Console from here &#128521;&#128521;
+        </h1>
     </div>
 
 
@@ -54,11 +55,13 @@
                 <p>{{item?.description}}</p>
                 @if(isLogin == false)
                 {
-                <button class="btn-2" (click)=showLoginAlert()>Buy Now @{{item.price}}</button>
+                <h3>Price : {{item.price}}/-</h3>
+                <button class="btn-2" (click)=showLoginAlert()>Add to Cart 🛒</button>
                 }
                 @else{
-                <button class="btn-2" (click)="addToCart(item)">Buy Now @{{item.price}}</button>
-                }   
+                <h3>Price : {{item.price}}/-</h3>
+                <button class="btn-2" (click)="addToCart(item)">Add to Cart🛒</button>
+                }
                 <h5 style="color: green;">Stock Available Qty : {{item?.stockQuantity}} left!</h5>
             </div>
         </div>
@@ -106,7 +109,8 @@
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>📍 Vashi, Navi Mumbai</p>
-                <p>📞 +91 8928858366</p>
+                <p>📞 +91 81086 66608</p>
+                <p>📞 +91 89288 58366</p>
                 <p>✉ gamewizards@gmail.com</p>
             </div>
 

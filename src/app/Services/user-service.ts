@@ -11,6 +11,7 @@ export class UserService {
   loginURL = "https://localhost:7257/api/Home/Login"
   CustomerDetails = "https://localhost:7257/api/Home"
   customerbyid = "https://localhost:7257/api/Home/id?id="
+  AllGamesProduct = "https://localhost:7257/api/Home/GamesAllProduct"
 
 
 
@@ -36,6 +37,11 @@ export class UserService {
 
   getCustomerById(id: number) {
     return this.http.get<any>(`${this.customerbyid}${id}`);
+  }
+
+  getAllGames()
+  {
+    return this.http.get<any>("https://localhost:7257/api/Home/GamesAllProduct")
   }
   
 }

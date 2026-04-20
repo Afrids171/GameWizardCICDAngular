@@ -1,8 +1,7 @@
-
 <div class="navbar">
 
     <div class="logo">
-        <a routerLink="" id="GameWizard" >🛒 Game Wizard</a>
+        <a routerLink="" id="GameWizard">🛒 Game Wizard</a>
         <span class="country">INDIA</span>
     </div>
 
@@ -41,173 +40,35 @@
         <h1 style="text-align: center; color: blue;">Power Up Your Console with the Hottest Titles! &#128521;&#128521;
         </h1>
     </div>
+    
 
-    <div class="container-1">
+     <div class="container-1">
 
+        @for(item of allProducts(); track item.gamesId)
+        {
         <div class="console-1">
             <div class="img-1">
-
+                <img [src]="item.imageUrl" alt="Images" height="250px" width="250px">
             </div>
             <div class="text-1">
-                <p>Rockstar Games PS5 Video Game ConsoleGrand Theft Auto V</p>
-                <button class="btn-2" (click)="addToCart()">Buy Now @1999/-</button>
+
+                <p style="font-weight: bold;"> {{item?.name}}</p>
+                <p>{{item?.description}}</p>
+                @if(isLogin == false)
+                {
+                <h3>Price : {{item.price}}/-</h3>
+                <button class="btn-2" (click)=showLoginAlert()>Add to Cart 🛒</button>
+                }
+                @else{
+                <h3>Price : {{item.price}}/-</h3>
+                <button class="btn-2" (click)="addToCart(item)">Add to Cart 🛒</button>
+                }
+                <h5 style="color: green;">Stock Available Qty : {{item?.stockQty}} left!</h5>
             </div>
         </div>
+        }
+     </div>   
 
-        <div class="console-1">
-            <div class="img-2">
-
-            </div>
-            <div class="text-1">
-                <p>
-                    Sony Ps5 Spiderman 2 Standard Edn.</p>
-                <button class="btn-2">Buy Now @3500/-</button>
-            </div>
-        </div>
-
-
-
-
-
-        <div class="console-2">
-            <div class="img-3">
-
-            </div>
-            <div class="text-1">
-                <p>
-
-                    Click to see full view
-                    PlayStation Sony God Of War Ragnarok | Standard Edition | PS5 Game (PlayStation 5)</p>
-                <button class="btn-2">Buy Now @2500/-</button>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <div class="console-2">
-            <div class="img-4">
-
-            </div>
-            <div class="text-1">
-                <p>
-
-                    Click to see full view
-                    2K GAMES WWE 2K25 | Standard Edition | PlayStation 5
-                </p>
-                <button class="btn-2">Buy Now @2999/-</button>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <div class="console-2">
-            <div class="img-5">
-
-            </div>
-            <div class="text-1">
-                <p>
-                    PlayStation®4 Pro
-                    4K-gaming and entertainment with vibrant HDR1
-
-                    Vertical stand sold separately
-                </p>
-                <button class="btn-2">Buy Now</button>
-            </div>
-        </div>
-
-
-
-
-
-
-
-        <div class="console-2">
-            <div class="img-6">
-
-            </div>
-            <div class="text-1">
-                <p>
-                    PlayStation®4 Pro
-                    4K-gaming and entertainment with vibrant HDR1
-
-                    Vertical stand sold separately
-                </p>
-                <button class="btn-2">Buy Now</button>
-            </div>
-        </div>
-
-
-
-
-
-        
-
-        <div class="console-2">
-            <div class="img-6">
-
-            </div>
-            <div class="text-1">
-                <p>
-                    PlayStation®4 Pro
-                    4K-gaming and entertainment with vibrant HDR1
-
-                    Vertical stand sold separately
-                </p>
-                <button class="btn-2">Buy Now</button>
-            </div>
-        </div>
-
-
-
-
-
-           <div class="console-2">
-            <div class="img-6">
-
-            </div>
-            <div class="text-1">
-                <p>
-                    PlayStation®4 Pro
-                    4K-gaming and entertainment with vibrant HDR1
-
-                    Vertical stand sold separately
-                </p>
-                <button class="btn-2">Buy Now</button>
-            </div>
-        </div>
-
-
-
-
-
-
-
-      <div class="console-2">
-            <div class="img-6">
-
-            </div>
-            <div class="text-1">
-                <p>
-                    PlayStation®4 Pro
-                    4K-gaming and entertainment with vibrant HDR1
-
-                    Vertical stand sold separately
-                </p>
-                <button class="btn-2">Buy Now</button>
-            </div>
-        </div>
-
-        
 
 
 
@@ -246,6 +107,7 @@
         </div>
     </footer>
 
+    
 
 
 
@@ -266,4 +128,3 @@
 
 
 
-</div>
