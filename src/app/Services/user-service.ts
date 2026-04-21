@@ -27,7 +27,7 @@ export class UserService {
   }
 
   getallproducts() {
-    return this.http.get<any>("https://localhost:https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/AllProducts/api/Home/AllProducts")
+    return this.http.get<any>("https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/AllProducts")
   }
 
   getCustomerDetails() {
