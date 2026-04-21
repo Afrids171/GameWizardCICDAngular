@@ -8,7 +8,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   POSTURL = "https://localhost:7257/api/Home/SignUp"
-  loginURL = "https://localhost:7257/api/Home/Login"
+  loginURL = "https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/login"
   CustomerDetails = "https://localhost:7257/api/Home"
   customerbyid = "https://localhost:7257/api/Home/id?id="
   AllGamesProduct = "https://localhost:7257/api/Home/GamesAllProduct"
@@ -41,7 +41,7 @@ export class UserService {
 
   getAllGames()
   {
-    return this.http.get<any>("https://localhost:7257/api/Home/GamesAllProduct")
+    return this.http.get<any>("https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/GamesAllProduct")
   }
   
 }
