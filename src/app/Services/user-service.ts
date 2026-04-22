@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-  POSTURL = "https://localhost:7257/api/Home/SignUp"
+  POSTURL = "https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/SignUp"
   loginURL = "https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/login"
   CustomerDetails = "https://localhost:7257/api/Home"
   customerbyid = "https://localhost:7257/api/Home/id?id="
