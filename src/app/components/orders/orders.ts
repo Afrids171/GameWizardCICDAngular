@@ -35,7 +35,8 @@ ngOnInit()
 onConfirmOrder() 
 {
   let obj: any = {
-      Address: this.Address.value
+    TotalAmount: this.CartTotal,
+      ShippingAddress: this.Address.value
     };
    this.userService.CreateOrder(this.id, obj).subscribe(
       (res: any) => {
