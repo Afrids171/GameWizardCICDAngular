@@ -12,6 +12,7 @@ export class UserService {
   CustomerDetails = "https://localhost:7257/api/Home"
   customerbyid = "https://localhost:7257/api/Home/id?id="
   AllGamesProduct = "https://localhost:7257/api/Home/GamesAllProduct"
+  CreateOrderURL = "https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/CreateOrder?CustId="
 
 
 
@@ -44,4 +45,9 @@ export class UserService {
     return this.http.get<any>("https://gamewizardapiazure20260421205624-bdg0chgbexftctce.centralindia-01.azurewebsites.net/api/Home/GamesAllProduct")
   }
   
+
+  CreateOrder(Id:any,obj: any) 
+  {
+      return this.http.post<any>(`${this.CreateOrderURL}${Id}`, obj);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../Services/user-service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-addtocart',
@@ -9,13 +9,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './addtocart.css',
 })
 export class Addtocart {
-constructor(private userService: UserService) {}
+constructor(private userService: UserService, private router: Router) {}
 isProfile = false;
 cartItems: any[] = [];
 cartTotal = 0;
 quantity: number = 1; 
 
+
   ngOnInit(): void {  
+
+
+localStorage.setItem('carttotal', JSON.stringify(this.cartTotal));
+
     this.isProfile = this.userService.isProfile;
     const data = localStorage.getItem('cartItems');
    if (data) {
@@ -68,7 +73,10 @@ removeFromCart(item : any)
   }
 
 
-
+onProceedToCheckout()
+{
+  this.router.navigate(['/orders']);
+}
 
 
 }

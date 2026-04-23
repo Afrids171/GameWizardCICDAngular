@@ -8,6 +8,7 @@ import { Signup } from './components/signup/signup';
 import { Profile } from './components/profile/profile';
  
 import { Addtocart } from './components/addtocart/addtocart';
+import { Orders } from './components/orders/orders';
 
 export const routes: Routes = [
     {path:'',component:Home},
@@ -17,7 +18,8 @@ export const routes: Routes = [
     {path:'login',component:Login},
     {path:'signup',component:Signup},
     {path:'profile',component:Profile},
-    {path:'addtocart',component:Addtocart}
+    {path:'addtocart',component:Addtocart},
+    {path:"orders",component:Orders}
     
    
 ];
