@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../Services/user-service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
-  imports: [ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule,RouterLink,Router],
   templateUrl: './orders.html',
   styleUrl: './orders.css',
 })
 export class Orders {
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
   id: number = 0;
   CartTotal: number = 0;
   Address = new FormControl('')
@@ -43,6 +43,8 @@ export class Orders {
       (res: any) => {
         console.log("Order Creation Response:", res);
         alert("Order created successfully");
+        this.Address.reset();
+        this.router.navigate(['/profile']);
       },
       (err: any) => {
         console.log("Error:", err.error);
