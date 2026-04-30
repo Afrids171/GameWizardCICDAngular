@@ -5,7 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
-  imports: [ReactiveFormsModule,RouterLink,Router],
+  imports: [ReactiveFormsModule,RouterLink],
   templateUrl: './orders.html',
   styleUrl: './orders.css',
 })
