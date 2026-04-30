@@ -19,13 +19,14 @@ export class Addtocart {
   ngOnInit(): void {
 
 
-    this.calculateTotal();
+    
     this.isProfile = this.userService.isProfile;
     const data = localStorage.getItem('cartItems');
     if (data) {
       const products = JSON.parse(data);
       this.cartItems = products;
     }
+    this.calculateTotal();
     
   }
 
