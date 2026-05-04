@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../Services/user-service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import {  RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
-  imports: [ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './orders.html',
   styleUrl: './orders.css',
 })
@@ -36,7 +37,7 @@ export class Orders {
     let obj: any = {
       CustId: this.id,
       TotalAmount: this.CartTotal,
-      PaymentMethod:"Upi",
+      PaymentMethod: "Upi",
       ShippingAddress: this.Address.value
     };
     this.userService.CreateOrder(obj).subscribe(
