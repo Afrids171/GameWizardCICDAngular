@@ -35,7 +35,7 @@ export class Login {
         
 
         this.router.navigate(['/profile'], { replaceUrl: true });
-        console.log("Login Response:", res);
+        // console.log("Login Response:", res);
         this.userservice.IsLogin = true;
        
       },
