@@ -42,15 +42,17 @@ export class Orders {
     this.userService.CreateOrder(obj).subscribe(
       (res: any) => {
         console.log("Order Creation Response:", res);
-        alert("Order created successfully");
+        alert("Order created successfully ");
         this.Address.reset();
-        this.router.navigate(['/']);
+        this.router.navigate(['/profile'], { replaceUrl: true });
+        this.CartTotal = 0;
+        localStorage.removeItem('carttotal');
       },
       (err: any) => {
         console.log("Error:", err.error);
         alert("Order creation failed");
         this.Address.reset();
-        this.router.navigate(['/addtocart']);
+        this.router.navigate(['/addtocart'], { replaceUrl: true });
       }
     );
   }
